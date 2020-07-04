@@ -167,7 +167,7 @@ def train(epoch):
         mask = mask.to(device, dtype=torch.long)
         output = model(ids, mask)
         loss = F.cross_entropy(output, targets)
-        if _ % 5000 == 0:
+        if _ % 500 == 0:
             print(f'Step: {_}, Epoch: {epoch}, Loss:  {loss.item()}')
 
         optimizer.zero_grad()
